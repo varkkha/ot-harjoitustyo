@@ -6,3 +6,5 @@ Työn tavoitteena on luoda **laskuri aurinkopaneelin takaisinmaksuajasta**
 
 - [Laskarit](laskarit/)
 - [Vaatimusmäärittely](dokumentaatio/vaatimusmaarittely.md)
+- [Työaikakirjanpito](dokumentaatio/tuntikirjanpito.md)
+
