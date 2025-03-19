@@ -4,5 +4,5 @@ Harjoitustyö kurssille *TKT20018 Aineopintojen harjoitustyö: Ohjelmistotekniik
 
 Työn tavoitteena on luoda **laskuri aurinkopaneelin takaisinmaksuajasta**
 
-[Laskarit](laskarit/)
-[Vaatimusmäärittely](dokumentaatio/vaatimusmaarittely.md)
+- [Laskarit](laskarit/)
+- [Vaatimusmäärittely](dokumentaatio/vaatimusmaarittely.md)
