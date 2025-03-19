@@ -12,16 +12,16 @@ Laskurilla on yksi peruskäyttäjärooli.
 
 ## Käyttöliittymäluonnos
 
-![](./kuvat/Käyttöliittymäluonnos.png)
+![](./kuvat/kayttoliittymaluonnos.png)
 
 ## Perusversion tarjoama toiminnallisuus
 
 - Käyttäjä voi luoda itselleen käyttäjätunnuksen ja salasanan
-- Käyttäjätunnuksen tulee olla uniikki
-- Salasanojen tulee täsmätä
+	- Käyttäjätunnuksen tulee olla uniikki
+	- Salasanojen tulee täsmätä
 - Käyttäjä voi kirjautua järjestelmään
-- Käyttäjätunnuksen ja salasanan tulee täsmätä
-- Jos käyttäjätunnus tai salasana ei täsmää, niin järjestelmä antaa virheilmoituksen
+	- Käyttäjätunnuksen ja salasanan tulee täsmätä
+	- Jos käyttäjätunnus tai salasana ei täsmää, niin järjestelmä antaa virheilmoituksen
 - Käyttäjä voi kirjautua ulos järjestelmästä
 - Käyttäjä voi syöttää laskuriin tiedot
 	- Tyhjiä kenttiä ei voi palauttaa, tällöin järjestelmä antaa virheilmoituksen
