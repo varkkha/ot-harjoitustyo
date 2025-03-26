@@ -7,8 +7,7 @@
     Ruutu "1" -- "0..8" Pelinappula
     Pelinappula "1" -- "1" Pelaaja
     Pelaaja "2..8" -- "1" Monopolipeli
-    Pelaaja "1" -- "1" NormaalitKadut
-
+    
     class Pelaaja{
 	rahaa
     }
@@ -22,7 +21,7 @@
     Monopolipeli <|-- Aloitusruutu : sijainti
     Monopolipeli <|-- Vankila : sijainti  	
     
-    Pelaaja <|-- NormaalitKadut : omistaa
+    Pelaaja <|-- NormaalitKadut : omistus
 
     class Aloitusruutu{
 	toiminto
