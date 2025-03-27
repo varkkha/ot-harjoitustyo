@@ -5,6 +5,7 @@ description = ""
 authors = [
     {name = "Hanna Varkki",email = "h.varkki@gmail.com"}
 ]
+readme = "README.md"
 requires-python = "^3.10"
 dependencies = [
     "invoke (>=2.2.0,<3.0.0)"
