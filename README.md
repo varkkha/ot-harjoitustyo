@@ -6,9 +6,9 @@ Työn tavoitteena on luoda **laskuri aurinkopaneelin takaisinmaksuajasta**
 
 ## Dokumentaatio
 
-- [Vaatimusmäärittely](dokumentaatio/vaatimusmaarittely.md)
-- [Työaikakirjanpito](dokumentaatio/tuntikirjanpito.md)
-- [Changelog](dokumentaatio/changelog.md)
+- [Vaatimusmäärittely](./sovellus/dokumentaatio/vaatimusmaarittely.md)
+- [Työaikakirjanpito](./sovellus/dokumentaatio/tuntikirjanpito.md)
+- [Changelog](./sovellus/dokumentaatio/changelog.md)
 
 ## Komentorivitoiminnot
 
