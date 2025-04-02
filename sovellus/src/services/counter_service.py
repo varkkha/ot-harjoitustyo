@@ -16,4 +16,3 @@ class CounterService:
         yearly_savings = self.calculate_savings(e_generation, e_purchase_price)
         payback_time = self.calculate_payback_time(net_cost, yearly_savings)
         return yearly_savings, payback_time
-
