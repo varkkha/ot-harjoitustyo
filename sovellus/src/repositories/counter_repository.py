@@ -1,17 +1,14 @@
-from entities.counter import Counter
 from database_connection import get_database_connection
 
 class CounterRepository:
 
     def __init__(self, connection):
-
         self._connection = connection
+        self._cursor = self._connection.cursor()
 
     def save_counter(self, counter):
 
-        cursor = self._connection.cursor()
-
-        cursor.execute('''
+        self._cursor.execute('''
         INSERT INTO calculations (
                        acquisition_cost,
                        tax_deduction,
@@ -32,5 +29,9 @@ class CounterRepository:
         self._connection.commit()
 
         return counter
+
+    def get_all_calculations(self):
+        self._cursor.execute("SELECT * FROM calculations")
+        return self._cursor.fetchall()
 
 counter_repository = CounterRepository(get_database_connection())

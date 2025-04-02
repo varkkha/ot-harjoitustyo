@@ -2,13 +2,13 @@
 
 ## Sovelluksen tarkoitus
 
-Laskuri aurinkopaneelien takaisinmaksuajasta. 
-Käyttäjä syöttää laskuriin aurinkopaneelien hankintaan ja sähkönkulutukseen liittyviä perustietoja. Osa laskurin tiedoista tulee automaattisesti muualta saatujen tilastojen perusteella. 
-Näiden tietojen pohjalta laskuri laskee ajan, jonka kuluessa aurinkopaneelien hankintahinta on saatu kuoletettua. 
+Laskuri aurinkopaneelien takaisinmaksuajasta.
+Käyttäjä syöttää laskuriin aurinkopaneelien hankintaan ja sähkönkulutukseen liittyviä perustietoja. Osa laskurin tiedoista tulee automaattisesti muualta saatujen tilastojen perusteella.
+Näiden tietojen pohjalta laskuri laskee ajan, jonka kuluessa aurinkopaneelien hankintahinta on saatu kuoletettua.
 
 ## Käyttäjät
 
-Laskurilla on yksi peruskäyttäjärooli. 
+Laskurilla on yksi peruskäyttäjärooli.
 
 ## Käyttöliittymäluonnos
 
@@ -23,9 +23,9 @@ Laskurilla on yksi peruskäyttäjärooli.
 	- Käyttäjätunnuksen ja salasanan tulee täsmätä
 	- Jos käyttäjätunnus tai salasana ei täsmää, niin järjestelmä antaa virheilmoituksen
 - Käyttäjä voi kirjautua ulos järjestelmästä
-- Käyttäjä voi syöttää laskuriin tiedot
+- (Tehty) Käyttäjä voi syöttää laskuriin tiedot
 	- Tyhjiä kenttiä ei voi palauttaa, tällöin järjestelmä antaa virheilmoituksen
-- Käyttäjä voi nähdä laskuriin syöttämänsä tiedot sekä laskurin laskeman tuloksen
+- (Tehty) Käyttäjä voi nähdä laskuriin syöttämänsä tiedot sekä laskurin laskeman tuloksen
 - Käyttäjä voi muokata laskuriin syöttämiänsä tietoja
 
 ## Jatkokehitysideoita

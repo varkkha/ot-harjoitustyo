@@ -25,7 +25,12 @@ cursor = connection.cursor()
 cursor.execute('''
     INSERT INTO calculations (acquisition_cost, tax_deduction, e_consumption, e_generation, e_purchase_price, yearly_savings, payback_time)
     VALUES (?, ?, ?, ?, ?, ?, ?)
-''', (acquisition_cost, tax_deduction, e_consumption, e_generation, e_purchase_price, savings, payback_time))
+''', (acquisition_cost,
+      tax_deduction,
+      e_consumption,
+      e_generation,
+      e_purchase_price,
+      savings, payback_time))
 
 connection.commit()
 
