@@ -6,4 +6,4 @@ htmlcov
 __pycache__
 *.py[cod]
 *$py.class
-data/database.sqlite
+sovellus/data/database.sqlite

@@ -16,7 +16,7 @@ savings, payback_time = calculator.calculate(
     e_purchase_price
 )
 
-print(f"Annual savings: {savings:.2f} eur")
+print(f"\nAnnual savings: {savings:.2f} eur")
 print(f"Payback time: {payback_time:.1f} years")
 
 connection = get_database_connection()
