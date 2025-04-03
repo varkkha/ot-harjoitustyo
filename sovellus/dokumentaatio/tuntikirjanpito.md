@@ -6,11 +6,11 @@
 | 26.3. | 2   | sovelluksen alustus ja toiminnallisuuden toteutuksen aloitus |
 | 27.3. | 2   | ensimmäisten testien kirjoittaminen ja changelogin luominen |
 |  2.4. | 5   | tietokannan perustaminen, tutustumista tkinteriin   |
-|       |     | |
+|  3.4. | 5   | tietokannan jatkaminen, luokka-/pakkauskaavio, käyttäjän luominen |
 |   |     |  |
 |       |     |  |
 |   |     |  |
 |   |     |  |
 |       |     |  |
 |   |     |  |
-| yht   | 11   | |
+| yht   | 16   | |

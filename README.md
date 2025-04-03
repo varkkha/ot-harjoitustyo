@@ -9,6 +9,28 @@ Työn tavoitteena on luoda **laskuri aurinkopaneelin takaisinmaksuajasta**
 - [Vaatimusmäärittely](./sovellus/dokumentaatio/vaatimusmaarittely.md)
 - [Työaikakirjanpito](./sovellus/dokumentaatio/tuntikirjanpito.md)
 - [Changelog](./sovellus/dokumentaatio/changelog.md)
+- [Arkkitehtuurikuvaus](./sovellus/dokumentaatio/arkkitehtuuri.md)
+
+
+## Asennus
+
+1. Asenna riippuvuudet komennolla:
+
+```bash
+poetry install
+```
+
+2. Suorita vaadittavat alustustoimenpiteet komennolla:
+
+```bash
+poetry run invoke build
+```
+
+3. Käynnistä sovellus komennolla:
+
+```bash
+poetry run invoke start
+```
 
 ## Komentorivitoiminnot
 

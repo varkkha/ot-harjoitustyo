@@ -6,19 +6,20 @@ class CounterRepository:
         self._connection = connection
         self._cursor = self._connection.cursor()
 
-    def save_counter(self, counter):
-
+    def save_counter(self, counter, user_id):
         self._cursor.execute('''
         INSERT INTO calculations (
-                       acquisition_cost,
-                       tax_deduction,
-                       e_consumption,
-                       e_generation,
-                       e_purchase_price,
-                       yearly_savings,
-                       payback_time)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-    ''', (counter.acquisition_cost,
+            user_id,
+            acquisition_cost,
+            tax_deduction,
+            e_consumption,
+            e_generation,
+            e_purchase_price,
+            yearly_savings,
+            payback_time)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    ''', (user_id,
+          counter.acquisition_cost,
           counter.tax_deduction,
           counter.e_consumption,
           counter.e_generation,
@@ -27,7 +28,6 @@ class CounterRepository:
           counter.payback_time))
 
         self._connection.commit()
-
         return counter
 
     def get_all_calculations(self):

@@ -1,5 +1,11 @@
 from services.counter_service import CounterService
-from database_connection import get_database_connection
+from repositories.user_repository import user_repository
+from repositories.counter_repository import counter_repository
+from entities.user import User
+from entities.counter import Counter
+
+username = input("Create username: ")
+password = input("Create password: ")
 
 acquisition_cost = float(input("Enter acquisition cost: "))
 tax_deduction = float(input("Enter tax deduction: "))
@@ -19,26 +25,21 @@ savings, payback_time = calculator.calculate(
 print(f"\nAnnual savings: {savings:.2f} eur")
 print(f"Payback time: {payback_time:.1f} years")
 
-connection = get_database_connection()
-cursor = connection.cursor()
+new_user = User(username=username, password=password)
+new_user = user_repository.create(new_user)
+user_id = new_user.id
 
-cursor.execute('''
-    INSERT INTO calculations (acquisition_cost, tax_deduction, e_consumption, e_generation, e_purchase_price, yearly_savings, payback_time)
-    VALUES (?, ?, ?, ?, ?, ?, ?)
-''', (acquisition_cost,
-      tax_deduction,
-      e_consumption,
-      e_generation,
-      e_purchase_price,
-      savings, payback_time))
+new_counter = Counter(
+    acquisition_cost=acquisition_cost,
+    tax_deduction=tax_deduction,
+    e_consumption=e_consumption,
+    e_generation=e_generation,
+    e_purchase_price=e_purchase_price
+)
 
-connection.commit()
+counter_repository.save_counter(new_counter, user_id)
 
-cursor.execute("SELECT * FROM calculations")
-rows = cursor.fetchall()
-
+calculations = counter_repository.get_all_calculations()
 print("\nSaved calculations in the database:")
-for row in rows:
+for row in calculations:
     print(dict(row))
-
-connection.close()
