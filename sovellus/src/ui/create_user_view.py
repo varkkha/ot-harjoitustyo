@@ -32,18 +32,18 @@ class CreateUserView:
         password_confirm = self._password_confirm_entry.get()
 
         if password != password_confirm:
-            self._error_variable.set("Salasanat eivät täsmää.")
+            self._show_error("Salasanat eivät täsmää.")
             return
 
         if len(password) < 1:
-            self._error_variable.set("Salasana ei voi olla tyhjä.")
+            self._show_error("Salasana ei voi olla tyhjä.")
             return
 
         try:
             counter_service.create_user(username, password)
             self._handle_create_user()
         except UsernameExistsError:
-            self._error_variable.set("Käyttäjänimi on jo käytössä.")
+            self._show_error("Käyttäjänimi on jo käytössä.")
 
     def _show_error(self, message):
         self._error_variable.set(message)

@@ -42,7 +42,7 @@ class LoginView:
 
             self._handle_login_success()
         except InvalidCredentialsError:
-            self._error_variable.set("Virheellinen käyttäjätunnus tai salasana.")
+            self._show_error("Virheellinen käyttäjätunnus tai salasana.")
 
     def _show_error(self, message):
         self._error_variable.set(message)
