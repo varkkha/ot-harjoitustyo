@@ -4,8 +4,9 @@ class Counter:
                  tax_deduction,
                  e_consumption,
                  e_generation,
-                 e_purchase_price):
-
+                 e_purchase_price,
+                 user_id):
+        self.user_id = user_id
         self.acquisition_cost = acquisition_cost
         self.tax_deduction = tax_deduction
         self.e_consumption = e_consumption

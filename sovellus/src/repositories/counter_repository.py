@@ -1,12 +1,11 @@
 from database_connection import get_database_connection
 
 class CounterRepository:
-
     def __init__(self, connection):
         self._connection = connection
         self._cursor = self._connection.cursor()
 
-    def save_counter(self, counter, user_id):
+    def save_counter(self, counter):
         self._cursor.execute('''
         INSERT INTO calculations (
             user_id,
@@ -18,7 +17,7 @@ class CounterRepository:
             yearly_savings,
             payback_time)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-    ''', (user_id,
+    ''', (counter.user_id,
           counter.acquisition_cost,
           counter.tax_deduction,
           counter.e_consumption,
