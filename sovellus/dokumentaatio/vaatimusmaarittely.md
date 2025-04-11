@@ -18,15 +18,15 @@ Laskurilla on yksi peruskäyttäjärooli.
 
 - (Tehty) Käyttäjä voi luoda itselleen käyttäjätunnuksen ja salasanan
 	- (Tehty) Käyttäjätunnuksen tulee olla uniikki
-	- Salasanojen tulee täsmätä
-- Käyttäjä voi kirjautua järjestelmään
-	- Käyttäjätunnuksen ja salasanan tulee täsmätä
-	- Jos käyttäjätunnus tai salasana ei täsmää, niin järjestelmä antaa virheilmoituksen
-- Käyttäjä voi kirjautua ulos järjestelmästä
+	- (Tehty) Salasanojen tulee täsmätä
+- (Tehty) Käyttäjä voi kirjautua järjestelmään
+	- (Tehty) Käyttäjätunnuksen ja salasanan tulee täsmätä
+	- (Tehty) Jos käyttäjätunnus tai salasana ei täsmää, niin järjestelmä antaa virheilmoituksen
+- (Tehty) Käyttäjä voi kirjautua ulos järjestelmästä
 - (Tehty) Käyttäjä voi syöttää laskuriin tiedot
 	- Tyhjiä kenttiä ei voi palauttaa, tällöin järjestelmä antaa virheilmoituksen
 - (Tehty) Käyttäjä voi nähdä laskuriin syöttämänsä tiedot sekä laskurin laskeman tuloksen
-- Käyttäjä voi muokata laskuriin syöttämiänsä tietoja
+- Käyttäjä voi nähdä aiemman laskelmansa ja poistaa vanhan laskelman
 
 ## Jatkokehitysideoita
 

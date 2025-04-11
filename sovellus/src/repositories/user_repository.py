@@ -1,4 +1,3 @@
-import hashlib
 from entities.user import User
 from database_connection import get_database_connection
 
@@ -36,13 +35,11 @@ class UserRepository:
 
     def create(self, user):
 
-        hashed_password = hashlib.sha256(user.password.encode('utf-8')).hexdigest()
-
         cursor = self._connection.cursor()
 
         cursor.execute(
             "INSERT INTO users (username, password) VALUES (?, ?)",
-            (user.username, hashed_password)
+            (user.username, user.password)
         )
 
         self._connection.commit()

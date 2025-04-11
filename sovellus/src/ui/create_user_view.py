@@ -103,7 +103,7 @@ class CreateUserView:
 
         login_button = ttk.Button(
             master=self._frame,
-            text="Kirjaudu sisään",
+            text="Takaisin",
             command=self._handle_show_login_view
         )
 

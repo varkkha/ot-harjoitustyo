@@ -41,7 +41,13 @@ class CounterService:
         payback_time = self.calculate_payback_time(net_cost, yearly_savings)
         return yearly_savings, payback_time
 
-    def save_calculation(self, user, acquisition_cost, tax_deduction, e_consumption, e_generation, e_purchase_price):
+    def save_calculation(self,
+                         user,
+                         acquisition_cost,
+                         tax_deduction,
+                         e_consumption,
+                         e_generation,
+                         e_purchase_price):
         calculation = Counter(
             acquisition_cost=acquisition_cost,
             tax_deduction=tax_deduction,

@@ -89,6 +89,11 @@ class LoginView:
             command=self._login_handler
         )
 
+        create_user_info_label = ttk.Label(
+            master=self._frame,
+            text="Eikö sinulla ole vielä käyttäjätunnusta? Luo tunnus tästä:"
+        )
+
         create_user_button = ttk.Button(
             master=self._frame,
             text="Luo uusi käyttäjä",
@@ -98,6 +103,7 @@ class LoginView:
         self._frame.grid_columnconfigure(0, weight=1, minsize=400)
 
         login_button.grid(padx=5, pady=5, sticky=constants.EW)
+        create_user_info_label.grid(padx=5, pady=(15, 5), sticky=constants.W)
         create_user_button.grid(padx=5, pady=5, sticky=constants.EW)
 
         self._hide_error()

@@ -1,4 +1,4 @@
-from tkinter import ttk, constants
+from tkinter import ttk, StringVar, constants
 from services.counter_service import counter_service
 
 #UI was developed with reference to the sample repository "todo-app".
@@ -27,6 +27,13 @@ class CounterView:
 
     def destroy(self):
         self._frame.destroy()
+
+    def _show_error(self, message):
+        self._error_variable.set(message)
+        self._error_label.grid()
+
+    def _hide_error(self):
+        self._error_label.grid_remove()
 
     def _logout_handler(self):
         counter_service.logout()
@@ -67,11 +74,15 @@ class CounterView:
         print(f"user.id: {getattr(user, 'id', None)}, type: {type(getattr(user, 'id', None))}")
         #poista
 
-        acquisition_cost = float(self._acquisition_cost_entry.get())
-        tax_deduction = float(self._tax_deduction_entry.get())
-        e_consumption = float(self._e_consumption_entry.get())
-        e_generation = float(self._e_generation_entry.get())
-        e_purchase_price = float(self._e_purchase_price_entry.get())
+        try:
+            acquisition_cost = float(self._acquisition_cost_entry.get())
+            tax_deduction = float(self._tax_deduction_entry.get())
+            e_consumption = float(self._e_consumption_entry.get())
+            e_generation = float(self._e_generation_entry.get())
+            e_purchase_price = float(self._e_purchase_price_entry.get())
+        except ValueError:
+            self._show_error("Käytä pistettä (.) desimaalierottimena.")
+            return
 
         counter = counter_service.save_calculation(
             self._user,
@@ -101,7 +112,7 @@ class CounterView:
         tax_deduction_label = ttk.Label(master=self._frame, text="Verovähennys (eur):")
         e_consumption_label = ttk.Label(master=self._frame, text="Sähkönkulutus / vuosi (kWh):")
         e_generation_label = ttk.Label(master=self._frame, text="Oma sähkön tuotto / vuosi(kWh):")
-        e_purchase_price_label = ttk.Label(master=self._frame, text="Sähkön ostohinta (eur/kWh) (esim. 0.15):")
+        e_purchase_price_label = ttk.Label(master=self._frame, text="Sähkön ostohinta (eur/kWh):")
 
         acquisition_cost_label.grid(row=1, column=0, padx=5, pady=5, sticky=constants.W)
         self._acquisition_cost_entry.grid(row=1, column=1, padx=5, pady=5, sticky=constants.EW)
@@ -135,6 +146,18 @@ class CounterView:
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
+
+        self._error_variable = StringVar(self._frame)
+
+        self._error_label = ttk.Label(
+            master=self._frame,
+            textvariable=self._error_variable,
+            foreground="red"
+        )
+
+        self._error_label.grid(padx=5, pady=5)
+        self._error_label.grid_remove()
+
 
         self._initialize_header()
         self._initialize_footer()
