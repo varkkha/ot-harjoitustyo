@@ -9,8 +9,8 @@
 |  3.4. | 5   | tietokannan jatkaminen, luokka-/pakkauskaavio, käyttäjän luominen |
 |  9.4. | 1   | ui  |
 | 10.4. | 6   | ui, käyttäjähallinta |
+| 11.4. | 2   | ui, sekvenssikaavio |
 |   |     |  |
 |   |     |  |
-|       |     |  |
 |   |     |  |
-| yht   | 23   | |
+| yht   | 25   | |
