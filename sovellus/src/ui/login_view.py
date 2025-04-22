@@ -1,11 +1,24 @@
+"""Käyttäjän sisäänkirjautumisesta vastaava näkymä."""
+
 from tkinter import ttk, StringVar, constants
 from services.counter_service import counter_service, InvalidCredentialsError
 
 #UI was developed with reference to the sample repository "todo-app".
 
 class LoginView:
+    """Käyttäjän sisäänkirjautumisesta vastaava näkymä."""
 
     def __init__(self, root, handle_show_create_user_view, handle_login_success):
+        """Luokan konstruktori. Alustaa näkymän sisäänkirjautumista varten.
+
+        Args:
+            root:
+            TKinter-elementti, jonka sisään näkymä alustetaan.
+            handle_show_create_user_view:
+            Funktio, jota kutsutaan, kun käyttäjä siirtyy uuden tunnuksen luomisnäkymään.
+            handle_login_success:
+            Funktio, jota kutsutaan, kun sisäänkirjautuminen onnistuu.
+        """
         self._root = root
         self._handle_show_create_user_view = handle_show_create_user_view
         self._handle_login_success = handle_login_success
@@ -19,9 +32,11 @@ class LoginView:
         self._initialize()
 
     def pack(self):
+        """Näyttää näkymän."""
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Tuhoaa näkymän."""
         self._frame.destroy()
 
     def _login_handler(self):
@@ -29,16 +44,11 @@ class LoginView:
         password = self._password_entry.get()
 
         try:
-            #poista
-            print(f"Yritetään kirjautua sisään käyttäjällä: {username}, salasanalla: {password}")
-            #poista
 
             user = counter_service.login(username, password)
 
-            #poista
             if user:
                 print(f"Kirjautunut käyttäjä: {user.username}")
-            #poista
 
             self._handle_login_success()
         except InvalidCredentialsError:

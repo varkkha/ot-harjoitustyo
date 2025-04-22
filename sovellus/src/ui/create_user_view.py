@@ -1,11 +1,24 @@
+"""Uuden käyttäjän luomisesta vastaava näkymä."""
+
 from tkinter import ttk, StringVar, constants
 from services.counter_service import counter_service, UsernameExistsError
 
 #UI was developed with reference to the sample repository "todo-app".
 
 class CreateUserView:
+    """Uuden käyttäjän luomisesta vastaava näkymä."""
 
     def __init__(self, root, handle_create_user, handle_show_login_view):
+        """Luokan konstruktori. Alustaa näkymän uuden käyttäjän luomiselle.
+
+        Args:
+            root:
+            TKinter-elementti, jonka sisään näkymä alustetaan.
+            handle_create_user:
+            Funktio, jota kutsutaan, kun käyttäjä luodaan onnistuneesti.
+            handle_show_login_view:
+            Funktio, jota kutsutaan, kun siirrytään takaisin sisäänkirjautumisnäkymään.
+        """
 
         self._root = root
         self._handle_create_user = handle_create_user
@@ -21,9 +34,11 @@ class CreateUserView:
         self._initialize()
 
     def pack(self):
+        """Näyttää näkymän."""
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Tuhoaa näkymän."""
         self._frame.destroy()
 
     def _create_user_handler(self):
