@@ -27,7 +27,7 @@ Laskurilla on yksi peruskäyttäjärooli.
 	- (Tehty) Tyhjiä kenttiä ei voi palauttaa, tällöin järjestelmä antaa virheilmoituksen
 - (Tehty) Käyttäjä voi nähdä laskuriin syöttämänsä tiedot sekä laskurin laskeman tuloksen
 - (Tehty) Käyttäjä voi nähdä aiemman laskelmansa ja poistaa vanhan laskelman
-- (Tehty) Peruskäyttäjä voi syöttää useamman aurinkopaneelitehtaan tiedot
+- (Tehty) Käyttäjä voi syöttää useamman aurinkopaneelitehtaan tiedot
 
 ## Jatkokehitysideoita
 

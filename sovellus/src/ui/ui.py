@@ -18,6 +18,7 @@ class UI:
             TKinter-elementti, jonka sisään näkymä alustetaan.
         """
         self._root = root
+        self._root.geometry("700x700")
         self._current_view = None
 
     def start(self):

@@ -12,5 +12,9 @@
 | 11.4. | 2   | ui, sekvenssikaavio |
 | 21.4. | 5   | automaattisesti päivittyvä kustannus, aiemmat laskelmat näkyviin ja poisto-mahdollisuus|
 | 22.4. | 6   | docstring, koodin siistimistä (mm.propertyjen lisääminen), lisää testejä  |
+| 23.4. | 2   | käyttöohjeen ja arkkitehtuuri-dokumentin edistämistä |
 |   |     |  |
-| yht   | 36   | |
+|   |     |  |
+|   |     |  |
+|   |     |  |
+| yht   | 38   | |
