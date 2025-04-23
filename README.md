@@ -10,10 +10,12 @@ Työn tavoitteena on luoda **laskuri aurinkopaneelin takaisinmaksuajasta**
 - [Työaikakirjanpito](./sovellus/dokumentaatio/tuntikirjanpito.md)
 - [Changelog](./sovellus/dokumentaatio/changelog.md)
 - [Arkkitehtuurikuvaus](./sovellus/dokumentaatio/arkkitehtuuri.md)
+- [Käyttöohje](./sovellus/dokumentaatio/kayttoohje.md)
 
 ## Releaset
 
-[Viikko 5](https://github.com/varkkha/ot-harjoitustyo/releases/tag/viikko5)
+- [Viikko 5](https://github.com/varkkha/ot-harjoitustyo/releases/tag/viikko5)
+- [Viikko 6](https://github.com/varkkha/ot-harjoitustyo/releases/tag/viikko6)
 
 ## Asennus
 
