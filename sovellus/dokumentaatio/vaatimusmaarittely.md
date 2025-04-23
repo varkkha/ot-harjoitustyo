@@ -4,7 +4,7 @@
 
 Laskuri aurinkopaneelien takaisinmaksuajasta.
 Käyttäjä syöttää laskuriin aurinkopaneelien hankintaan ja sähkönkulutukseen liittyviä perustietoja.
-Näiden tietojen pohjalta laskuri laskee ajan, jonka kuluessa aurinkopaneelien hankintahinta on saatu kuoletettua.
+Laskuri laskee vuotuiset säästöt ja niiden pohjalta ajan, jonka kuluessa aurinkopaneelien hankintahinta on saatu kuoletettua.
 
 ## Käyttäjät
 

@@ -2,7 +2,7 @@
 
 ## Rakenne
 
-Ohjelman rakenne on esitetty alla olevassa kaaviossa. Rakenne noudattaa kolmitasoista kerrosarkkitehtuuria. _UI_-pakkaus vastaa sovelluksen käyttöliittymästä, _Services_-pakkaus sovelluslogiikasta ja Repositories_-pakkaus vastaa sovelluksen tietokantaoperaatioista. _Entities-pakkaus sisältää luokat, jotka kuvaavat sovelluksen käyttämiä tietomalleja.
+Ohjelman rakenne on esitetty alla olevassa kaaviossa. Rakenne noudattaa kolmitasoista kerrosarkkitehtuuria. _UI_-pakkaus vastaa sovelluksen käyttöliittymästä, _Services_-pakkaus sovelluslogiikasta ja _Repositories_-pakkaus vastaa sovelluksen tietokantaoperaatioista. _Entities_-pakkaus sisältää luokat, jotka kuvaavat sovelluksen käyttämiä tietomalleja.
 
 ```mermaid
 graph TD
@@ -16,7 +16,7 @@ graph TD
 
 ## Sovelluslogiikka
 
-Sovelluksessa käytettäviä tietomalleja ovat luokat ![User](../src/entities/user.py) ja ![Counter](../src/entities/counter.py). Counter-luokka kuvaa aurinkopaneelilaskuria ja User-luokka kuvaa käyttäjätunnuksen luonutta käyttäjää.
+Sovelluksessa käytettäviä tietomalleja ovat luokat [User](../src/entities/user.py) ja [Counter](../src/entities/counter.py). Counter-luokka kuvaa aurinkopaneelilaskuria ja User-luokka kuvaa käyttäjätunnuksen luonutta käyttäjää.
 
 ```mermaid
 classDiagram
