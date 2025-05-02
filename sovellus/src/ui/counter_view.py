@@ -90,6 +90,16 @@ class CounterView:
             e_generation = float(self._e_generation_entry.get())
             e_purchase_price = float(self._e_purchase_price_entry.get())
 
+            if any(value < 0 for value in [
+                acquisition_cost,
+                tax_deduction,
+                e_consumption,
+                e_generation,
+                e_purchase_price
+            ]):
+                self._show_error("Arvot eivät voi olla negatiivisia.")
+                return
+
         except ValueError as e:
             print("ValueError:", e)
             self._show_error("Anna arvo kaikkiin kenttiin. " \
