@@ -26,9 +26,13 @@ poetry run invoke start
 
 ## Ohjelman käyttö
 
+# Kirjautuminen
+
 Ohjelma avautuu sisäänkirjautumisnäkymään. Tästä näkymästä pääsee kirjautumaan sisään olemassaolevilla käyttäjätunnuksilla syöttämällä käyttäjätunnuksen ja salasanan ja painamalla "Kirjaudu sisään".
 
 ![](./kuvat/sisaankirjautuminen.png)
+
+# Uuden käyttäjän luominen
 
 Mikäli käyttäjällä ei ole vielä tunnuksia, tunnukset pääsee luomaan painamalla "Luo uusi käyttäjä"-nappia. Tämän napin takaa avautuu sivu, jossa uudet tunnukset on mahdollista luoda.
 

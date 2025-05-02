@@ -109,4 +109,8 @@ sequenceDiagram
   end
 ```
 
+### Uuden laskelman luominen
+
+Uuden laskelman luominen tapahtuu kirjautumalla sisään sovellukseen ja syöttämällä laskurin kenttiin vaaditut tiedot.
+
 
