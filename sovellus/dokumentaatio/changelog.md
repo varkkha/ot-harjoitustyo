@@ -25,3 +25,5 @@
 - Käyttäjä näkee aiemmat laskelmansa
 - Poistomahdollisuus aiempiin laskelmiin
 
+## Viikko 7
+- Virheviestin lisääminen, jos syötetyt arvot ovat negatiivisia

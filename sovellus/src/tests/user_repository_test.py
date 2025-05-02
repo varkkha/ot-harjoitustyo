@@ -45,4 +45,8 @@ class TestUserRepository(unittest.TestCase):
 
         self.assertEqual(len(result2), 0)
 
+    def test_find_by_username_returns_none_if_user_not_found(self):
+        result = self.repo.find_by_username("empty")
+        self.assertIsNone(result)
+
 
