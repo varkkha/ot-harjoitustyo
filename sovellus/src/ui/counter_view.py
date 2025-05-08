@@ -118,8 +118,21 @@ class CounterView:
             e_generation,
             e_purchase_price
         )
-        self._savings_label.config(text=f"Vuotuiset säästöt: {counter.yearly_savings:.2f} eur")
-        self._payback_time_label.config(text=f"Takaisinmaksuaika: {counter.payback_time:.1f} vuotta")
+        self._savings_label.config(text=f"{counter.yearly_savings:.2f} eur")
+        self._payback_time_label.config(text=f"{counter.payback_time:.1f} vuotta")
+
+        self.display_previous_calculations()
+
+    def _clear_inputs_and_results(self):
+        self._acquisition_cost_var.set("")
+        self._tax_deduction_var.set("")
+        self._e_consumption_entry.delete(0, 'end')
+        self._e_generation_entry.delete(0, 'end')
+        self._e_purchase_price_entry.delete(0, 'end')
+        self._net_cost_label.config(text="0.00 eur")
+        self._savings_label.config(text="0.00 eur")
+        self._payback_time_label.config(text="0.0 vuotta")
+        self._hide_error()
 
     #generoitu koodi alkaa
     def _update_net_cost(self):
@@ -150,12 +163,18 @@ class CounterView:
             command=self._handle_create_counter
         )
 
+        clear_button = ttk.Button(
+            master=self._frame,
+            text="Tyhjennä",
+            command=self._clear_inputs_and_results
+        )
+
         acquisition_cost_label = ttk.Label(master=self._frame, text="Hankintahinta (eur):")
         tax_deduction_label = ttk.Label(master=self._frame, text="Verovähennys (eur):")
-        net_cost_label = ttk.Label(master=self._frame, text="Kustannus: ")
+        net_cost_label = ttk.Label(master=self._frame, text="Kustannus (eur): ")
         e_consumption_label = ttk.Label(master=self._frame, text="Sähkönkulutus / vuosi (kWh):")
         e_generation_label = ttk.Label(master=self._frame, text="Oma sähkön tuotto / vuosi (kWh):")
-        e_purchase_price_label = ttk.Label(master=self._frame, text="Sähkön ostohinta (eur/kWh):")
+        e_purchase_price_label = ttk.Label(master=self._frame, text="Sähkön ostohinta (eur / kWh):")
 
         self._net_cost_label = ttk.Label(master=self._frame, text="0.00 eur")
 
@@ -179,18 +198,31 @@ class CounterView:
 
         create_counter_button.grid(
             row=7,
-            column=0,
-            columnspan=2,
+            column=1,
             padx=5,
             pady=5,
             sticky=constants.EW
         )
 
-        self._savings_label = ttk.Label(master=self._frame, text="Vuotuiset säästöt: ")
-        self._payback_time_label = ttk.Label(master=self._frame, text="Takaisinmaksuaika: ")
+        clear_button.grid(
+            row=10,
+            column=1,
+            padx=5,
+            pady=5,
+            sticky=constants.EW
+        )
 
-        self._savings_label.grid(row=8, column=0, padx=5, pady=5, sticky=constants.W)
-        self._payback_time_label.grid(row=9, column=0, padx=5, pady=5, sticky=constants.W)
+        savings_text_label = ttk.Label(master=self._frame, text="Vuotuiset säästöt:")
+        payback_text_label = ttk.Label(master=self._frame, text="Takaisinmaksuaika:")
+
+        self._savings_label = ttk.Label(master=self._frame, text="0.00 eur")
+        self._payback_time_label = ttk.Label(master=self._frame, text="0.0 vuotta")
+
+        savings_text_label.grid(row=8, column=0, padx=5, pady=5, sticky=constants.W)
+        self._savings_label.grid(row=8, column=1, padx=5, pady=5, sticky=constants.W)
+
+        payback_text_label.grid(row=9, column=0, padx=5, pady=5, sticky=constants.W)
+        self._payback_time_label.grid(row=9, column=1, padx=5, pady=5, sticky=constants.W)
 
     def _delete_counter(self, counter_id):
         counter_service.delete_counter(counter_id)
@@ -199,7 +231,7 @@ class CounterView:
     def display_previous_calculations(self):
         """Näyttää aiemmat käyttäjän tekemät laskelmat näkymässä.
 
-        Poistaa ensin kaikki aiemmin listatut laskelmat näkymästä (rivit 10 ja siitä eteenpäin),
+        Poistaa ensin kaikki aiemmin listatut laskelmat näkymästä (rivit 11 ja siitä eteenpäin),
         hakee käyttäjään liittyvät tallennetut laskelmat palvelusta ja näyttää ne
         käyttöliittymässä. Jokaiselle laskelmalle näytetään tiedot sekä "Poista"-painike,
         jonka avulla käyttäjä voi poistaa kyseisen laskelman.
@@ -209,15 +241,15 @@ class CounterView:
 
         #generoitu koodi alkaa
         for widget in self._frame.grid_slaves():
-            if int(widget.grid_info()["row"]) >= 10:
+            if int(widget.grid_info()["row"]) >= 11:
                 widget.destroy()
         #generoitu koodi loppuu
 
         previous_calculations = counter_service.get_previous_calculations(self._user)
 
         if previous_calculations:
-            row = 10
-            header_label = ttk.Label(self._frame, text="Aiemmat laskelmat", font=("bold"))
+            row = 11
+            header_label = ttk.Label(self._frame, text="Aiemmat laskelmat", font="bold")
             header_label.grid(row=row, column=0, columnspan=2, sticky=constants.W, padx=5, pady=5)
             row += 1
 
@@ -245,7 +277,7 @@ class CounterView:
                 row += 1
         else:
             no_calcs_label = ttk.Label(self._frame, text="Aiempia laskelmia ei ole.")
-            no_calcs_label.grid(row=10, column=0, columnspan=2, sticky=constants.W, padx=5, pady=5)
+            no_calcs_label.grid(row=11, column=0, columnspan=2, sticky=constants.W, padx=5, pady=5)
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)

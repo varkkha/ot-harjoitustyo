@@ -111,6 +111,23 @@ sequenceDiagram
 
 ### Uuden laskelman luominen
 
-Uuden laskelman luominen tapahtuu kirjautumalla sisään sovellukseen ja syöttämällä laskurin kenttiin vaaditut tiedot.
+Uuden laskelman luominen tapahtuu kirjautumalla sisään sovellukseen ja syöttämällä laskurin kenttiin vaaditut tiedot. Mikäli syöte on virheellinen (esim. väärä desimaalierotin tai negatiivinen luku), antaa ohjelma virheilmoituksen. Validi syöte hyväksytään ja laskelma tallennetaan. Tallennettuun laskelmaan lisätään myös käyttäjän ID-tieto, jotta kyseinen käyttäjä voi myös myöhemmin tarkastella myöhemmin tekemiään laskelmia.
 
+```mermaid
+sequenceDiagram
+  actor User
+  participant UI
+  participant CounterService
+  participant CounterRepository
 
+  User->>UI: syötä laskelma (hankintahinta, verovähennys, sähkönkulutus, jne.)
+  UI->>UI: tarkista syötteet
+  alt virheellinen syöte
+    UI->>User: näytä virheilmoitus
+  else validi syöte
+    UI->>CounterService: save_calculation(user, hankintahinta, verovähennys, sähkönkulutus, jne.)
+    CounterService->>CounterRepository: save_counter(laskelma)
+    CounterRepository->>CounterService: laskelma tallennettu
+    CounterService->>UI: näytä tallennettu laskelma ja laskelman tulokset
+  end
+```

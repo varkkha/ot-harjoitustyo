@@ -27,3 +27,7 @@
 
 ## Viikko 7
 - Virheviestin lisääminen, jos syötetyt arvot ovat negatiivisia
+- Uusimman laskelman päivittyminen suoraan aiempien laskelmien listaan
+- Tyhjennä-nappi laskuriin
+- Ikkunan koko kasvaa, jos aiempia laskelmia tulee lisää
+- Virheviesti, jos yrittää luoda tyhjän käyttäjätunnuksen

@@ -115,6 +115,19 @@ class CounterService:
         return user
 
     def login(self, username, password):
+        """Kirjaa käyttäjän sisään.
+
+        Args:
+            username: Käyttäjän käyttäjätunnus, merkkijonoarvo
+            password: Käyttäjän salasana, merkkijonoarvo
+
+        Raises:
+            InvalidCredentialsError:
+            Virhe, joka heitetään, jos käyttäjätunnus ja salasana eivät täsmää.
+
+        Returns:
+            Kirjautunut käyttäjä User-olion muodossa.
+        """
 
         user = self._user_repository.find_by_username(username)
 

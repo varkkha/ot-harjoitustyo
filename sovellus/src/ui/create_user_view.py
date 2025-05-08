@@ -46,12 +46,16 @@ class CreateUserView:
         password = self._password_entry.get()
         password_confirm = self._password_confirm_entry.get()
 
-        if password != password_confirm:
-            self._show_error("Salasanat eivät täsmää.")
+        if len(username) < 1:
+            self._show_error("Käyttäjätunnus ei voi olla tyhjä.")
             return
 
         if len(password) < 1:
             self._show_error("Salasana ei voi olla tyhjä.")
+            return
+
+        if password != password_confirm:
+            self._show_error("Salasanat eivät täsmää.")
             return
 
         try:

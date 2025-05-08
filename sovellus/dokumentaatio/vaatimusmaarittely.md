@@ -30,6 +30,7 @@ Sovelluksessa on kolme eri näkymää. Ohjelma avautuu sisäänkirjautumissivull
 	- Tyhjiä kenttiä tai negatiivisia arvoja ei voi palauttaa, tällöin järjestelmä antaa virheilmoituksen
 	- Luvut tulee syöttää oikeassa muodossa niin, että desimaalierottimena käytetään pistettä. Mikäli luvut syötetään virheellisessä muodossa, antaa järjestelmä virheilmoituksen.
 - Käyttäjä voi nähdä laskuriin syöttämänsä tiedot sekä laskurin laskeman tuloksen
+- Käyttäjä voi tyhjentää laskurin tiedot
 - Käyttäjä voi nähdä aiemmat laskelmansa ja poistaa vanhoja laskelmiaan
 
 ## Jatkokehitysideoita

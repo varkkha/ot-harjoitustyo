@@ -14,7 +14,7 @@
 | 22.4. | 6   | docstring, koodin siistimistä (mm.propertyjen lisääminen), lisää testejä  |
 | 23.4. | 2   | käyttöohjeen ja arkkitehtuuri-dokumentin edistämistä |
 |  2.5. | 3   | positiivisten lukujen tarkistus, loput testit, dokumentaation päivitystä |
-|   |     |  |
+|  8.5. |     | tyhjennys-napin lisääminen, uuden laskelman päivittyminen listaan |
 |   |     |  |
 |   |     |  |
 | yht   | 41   | |
