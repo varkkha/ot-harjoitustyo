@@ -162,7 +162,7 @@ sequenceDiagram
   end
 ```
 
-Kirjautuessaan sisään käyttäjä syöttää tunnuksensa ja painaa _Kirjaudu sisään_-painiketta. Tapahtumankäsittelijä kutsuu _CounterService_-luokan `login`-metodia käyttäjän syöttämillä parametreilla. Tämän jälkeen _CounterService_ kutsuu _UserRepository_-luokan `find_by_username`-metodia. _UserRepository_ palauttaa User-olion, mikäli käyttäjä löytyi _CounterService_ palauttaa User-olion _UI_-kerrokselle ja _UI_ vaihtaa näkymäksi _CounterView_-näkymän. Mikäli käyttäjää ei löydy tai salasana on väärin, _UI_ näyttää virheilmoituksen.
+Kirjautuessaan sisään käyttäjä syöttää tunnuksensa ja painaa _Kirjaudu sisään_-painiketta. Tapahtumankäsittelijä kutsuu _CounterService_-luokan `login`-metodia käyttäjän syöttämillä parametreilla. Tämän jälkeen _CounterService_ kutsuu _UserRepository_-luokan `find_by_username`-metodia. _UserRepository_ palauttaa User-olion, mikäli käyttäjä löytyi. _CounterService_ palauttaa User-olion _UI_-kerrokselle ja _UI_ vaihtaa näkymäksi _CounterView_-näkymän. Mikäli käyttäjää ei löydy tai salasana on väärin, _UI_ näyttää virheilmoituksen.
 
 ### Uuden laskelman luominen
 
@@ -187,4 +187,11 @@ sequenceDiagram
   end
 ```
 
-Kun käyttäjä painaa _Luo laskelma_-painiketta, tarkistetaan _UI_-tasolla, että syötteet ovat validit. Jos syöte on virheellinen, näytetään käyttäjälle virheilmoitus. Kun syöte on validi, käyttöliittymä kutsuu palvelua save_calculation, joka ottaa mukaan käyttäjän tiedot sekä syötetyt tiedot. Tämän jälkeen _CounterService_ kutsuu _CounterRepository_ luokkaa tallentamaan laskelman tiedot tietokantaan. Tämän jälkeen _CounterRepository_  vahvistaa _CounterService_-luokalle, että laskelma on tallennettu ja _CounterService_ palauttaa tiedon onnistuneesta tallennuksesta sekä laskelman tulokset _UI_-luokalle.
+Kun käyttäjä painaa _Luo laskelma_-painiketta, tarkistetaan _UI_-tasolla, että syötteet ovat validit. Jos syöte on virheellinen, näytetään käyttäjälle virheilmoitus. Kun syöte on validi, käyttöliittymä kutsuu metodia `save_calculation`, joka ottaa mukaan käyttäjän tiedot sekä syötetyt tiedot. Tämän jälkeen _CounterService_ kutsuu _CounterRepository_ luokkaa tallentamaan laskelman tiedot tietokantaan. Tämän jälkeen _CounterRepository_  vahvistaa _CounterService_-luokalle, että laskelma on tallennettu ja _CounterService_ palauttaa tiedon onnistuneesta tallennuksesta sekä laskelman tulokset _UI_-luokalle.
+
+## Ohjelman rakenteeseen jääneet heikkoudet
+
+### Sovelluslogiikka
+
+Pylint-tarkistus paljasti, että joissakin sovelluslogiikan osissa käytetään liian monta parametria funktioiden kutsussa ja määrittelyssä. Esimerkiksi `entities.counter.Counter`-luokan konstruktorissa on kahdeksan parametria, mikä ylittää Pylintin suositusrajan. Samankaltaisia havaintoja tehtiin myös `counter_service.py`-tiedoston funktioissa.
+

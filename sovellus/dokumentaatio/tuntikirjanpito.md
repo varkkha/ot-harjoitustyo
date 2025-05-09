@@ -15,6 +15,5 @@
 | 23.4. | 2   | käyttöohjeen ja arkkitehtuuri-dokumentin edistämistä |
 |  2.5. | 3   | positiivisten lukujen tarkistus, loput testit, dokumentaation päivitystä |
 |  8.5. | 6    | tyhjennys-napin lisääminen, uuden laskelman päivittyminen listaan, dokumentaation päivitystä |
-|   |     |  |
-|   |     |  |
-| yht   | 47   | |
+|  9.5. | 3   |  dokumenttien viimeistely |
+| yht   | 50   | |
