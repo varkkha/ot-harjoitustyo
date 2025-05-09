@@ -1,8 +1,10 @@
-# Ohjelmistotekniikka, harjoitustyö
+# Aurinkopaneelilaskuri
+
+Laskuri aurinkopaneelien takaisinmaksuajasta.
+Käyttäjä syöttää laskuriin aurinkopaneelien hankintaan ja sähkönkulutukseen liittyviä perustietoja.
+Laskuri laskee vuotuiset säästöt ja niiden pohjalta ajan, jonka kuluessa aurinkopaneelien hankintahinta on saatu kuoletettua.
 
 Harjoitustyö kurssille *TKT20018 Aineopintojen harjoitustyö: Ohjelmistotekniikka*
-
-Työn tavoitteena on luoda **laskuri aurinkopaneelin takaisinmaksuajasta**
 
 ## Dokumentaatio
 
@@ -11,11 +13,13 @@ Työn tavoitteena on luoda **laskuri aurinkopaneelin takaisinmaksuajasta**
 - [Changelog](./sovellus/dokumentaatio/changelog.md)
 - [Arkkitehtuurikuvaus](./sovellus/dokumentaatio/arkkitehtuuri.md)
 - [Käyttöohje](./sovellus/dokumentaatio/kayttoohje.md)
+- [Testausdokumentti](./sovellus/dokumentaatio/testaus.md)
 
 ## Releaset
 
 - [Viikko 5](https://github.com/varkkha/ot-harjoitustyo/releases/tag/viikko5)
 - [Viikko 6](https://github.com/varkkha/ot-harjoitustyo/releases/tag/viikko6)
+- [Loppupalautus] (https://github.com/varkkha/ot-harjoitustyo/releases/tag/loppupalautus)
 
 ## Asennus
 
