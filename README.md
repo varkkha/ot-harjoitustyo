@@ -19,7 +19,7 @@ Harjoitustyö kurssille *TKT20018 Aineopintojen harjoitustyö: Ohjelmistotekniik
 
 - [Viikko 5](https://github.com/varkkha/ot-harjoitustyo/releases/tag/viikko5)
 - [Viikko 6](https://github.com/varkkha/ot-harjoitustyo/releases/tag/viikko6)
-- [Loppupalautus] (https://github.com/varkkha/ot-harjoitustyo/releases/tag/loppupalautus)
+- [Loppupalautus](https://github.com/varkkha/ot-harjoitustyo/releases/tag/loppupalautus)
 
 ## Asennus
 
